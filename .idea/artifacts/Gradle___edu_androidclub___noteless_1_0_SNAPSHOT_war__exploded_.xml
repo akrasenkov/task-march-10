@@ -23,6 +23,7 @@
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.7.0" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.5.4" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.7.0" />
+          <element id="library" level="project" name="Gradle: org.mongodb:mongodb-driver:3.4.2" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-common:2.23.2" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-client:2.23.2" />
           <element id="library" level="project" name="Gradle: javax.ws.rs:javax.ws.rs-api:2.0.1" />
@@ -34,6 +35,8 @@
           <element id="library" level="project" name="Gradle: javax.validation:validation-api:1.1.0.Final" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.5.4" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.5.4" />
+          <element id="library" level="project" name="Gradle: org.mongodb:bson:3.4.2" />
+          <element id="library" level="project" name="Gradle: org.mongodb:mongodb-driver-core:3.4.2" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.bundles.repackaged:jersey-guava:2.23.2" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2:osgi-resource-locator:1.0.1" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2:hk2-utils:2.5.0-b05" />

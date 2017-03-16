@@ -4,6 +4,7 @@ buildscript {
     }
     dependencies {
         classpath 'org.akhikhl.gretty:gretty:+'
+        classpath 'com.google.appengine:gradle-appengine-plugin:1.9.40'
     }
 }
 
@@ -13,9 +14,31 @@ version '1.0-SNAPSHOT'
 apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'appengine'
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+appengine {
+    httpPort = 8888
+    downloadSdk = true
+    appcfg {
+        oauth2 = true
+        logs {
+            severity = 0
+        }
+    }
+    app {
+        id = 'banking-edu-androidclub'
+        version = 'v1'
+    }
+    enhancer {
+        version = 'v2'
+    }
+    jvmFlags = ['-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000']
+}
 
 repositories {
     mavenCentral()
@@ -35,4 +58,8 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-databind:2.7.0'
     compile 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.5.4'
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.7.0'
+
+    compile 'org.mongodb:mongodb-driver:3.4.2'
+
+    appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.48'
 }
