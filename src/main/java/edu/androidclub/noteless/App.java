@@ -22,6 +22,7 @@ public class App extends Application {
         this.singletons = new HashSet<>();
         this.singletons.add(new NotesResource(new NotesMongoStorage(connectDb())));
         this.classes.add(JacksonJaxbJsonProvider.class);
+        this.singletons.add(new AuthDynamicFeature(new AuthRequestFilter()));
     }
 
     private MongoDatabase connectDb() {

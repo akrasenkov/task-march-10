@@ -1,5 +1,6 @@
 package edu.androidclub.noteless;
 
+import edu.androidclub.noteless.annotation.Auth;
 import edu.androidclub.noteless.data.NotesRepository;
 import edu.androidclub.noteless.domain.Note;
 
@@ -37,6 +38,7 @@ public class NotesResource {
     }
 
     @GET
+    @Auth
     @Path("/{noteId}")
     @Produces(MediaType.APPLICATION_JSON)
     public Note getNote(@PathParam("noteId") String id) {
