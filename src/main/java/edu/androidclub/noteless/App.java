@@ -3,7 +3,8 @@ package edu.androidclub.noteless;
 import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
-import edu.androidclub.noteless.data.local.NotesMemoryStorage;
+import edu.androidclub.noteless.auth.AuthDynamicFeature;
+import edu.androidclub.noteless.auth.AuthRequestFilter;
 import edu.androidclub.noteless.data.local.NotesMongoStorage;
 
 import javax.ws.rs.ApplicationPath;

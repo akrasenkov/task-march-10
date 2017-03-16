@@ -1,6 +1,6 @@
 package edu.androidclub.noteless;
 
-import edu.androidclub.noteless.annotation.Auth;
+import edu.androidclub.noteless.auth.annotation.Auth;
 import edu.androidclub.noteless.data.NotesRepository;
 import edu.androidclub.noteless.domain.Note;
 
@@ -9,8 +9,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 import java.net.URI;
-import java.util.Iterator;
-import java.util.List;
 
 @Path("/notes")
 public class NotesResource {

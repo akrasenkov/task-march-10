@@ -1,6 +1,6 @@
-package edu.androidclub.noteless;
+package edu.androidclub.noteless.auth;
 
-import edu.androidclub.noteless.annotation.Auth;
+import edu.androidclub.noteless.auth.annotation.Auth;
 
 import javax.ws.rs.container.DynamicFeature;
 import javax.ws.rs.container.ResourceInfo;
