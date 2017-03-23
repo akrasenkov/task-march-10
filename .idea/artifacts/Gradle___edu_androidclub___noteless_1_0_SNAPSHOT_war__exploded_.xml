@@ -17,29 +17,30 @@
           <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-server:2.23.2" />
-          <element id="library" level="project" name="Gradle: org.glassfish.jersey.containers:jersey-container-servlet-core:2.23.2" />
-          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.7.0" />
-          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.7.0" />
-          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.5.4" />
-          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.7.0" />
-          <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-common:2.23.2" />
+          <element id="library" level="project" name="Gradle: org.glassfish.hk2:osgi-resource-locator:1.0.1" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-client:2.23.2" />
           <element id="library" level="project" name="Gradle: javax.ws.rs:javax.ws.rs-api:2.0.1" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.media:jersey-media-jaxb:2.23.2" />
           <element id="library" level="project" name="Gradle: javax.annotation:javax.annotation-api:1.2" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2:hk2-api:2.5.0-b05" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2.external:javax.inject:2.5.0-b05" />
-          <element id="library" level="project" name="Gradle: org.glassfish.hk2:hk2-locator:2.5.0-b05" />
-          <element id="library" level="project" name="Gradle: javax.validation:validation-api:1.1.0.Final" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.7.0" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.7.0" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.5.4" />
-          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.5.4" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.7.0" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.bundles.repackaged:jersey-guava:2.23.2" />
-          <element id="library" level="project" name="Gradle: org.glassfish.hk2:osgi-resource-locator:1.0.1" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-common:2.23.2" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2:hk2-utils:2.5.0-b05" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b05" />
           <element id="library" level="project" name="Gradle: org.javassist:javassist:3.20.0-GA" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.containers:jersey-container-servlet-core:2.23.2" />
           <element id="library" level="project" name="Gradle: javax.inject:javax.inject:1" />
+          <element id="library" level="project" name="Gradle: org.glassfish.hk2:hk2-locator:2.5.0-b05" />
+          <element id="library" level="project" name="Gradle: javax.validation:validation-api:1.1.0.Final" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.5.4" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.5.4" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-server:2.23.2" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/3.4.2/5d0448606f5f7f3974dbae69c4ccfffe214ae60d/mongo-java-driver-3.4.2.jar" />
         </element>
       </element>
     </root>
