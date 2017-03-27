@@ -23,6 +23,12 @@ public class UsersResource {
         return database.getUserByToken(token);
     }
 
+    /**
+     * Метод создания нового пользователя.
+     * Мы не можем создать пользователя, если не можем получить доступ к этому методу БЕЗ токена авторизации,
+     * поэтому помечаем этот метод аннотацией @NoAuth - {@link AuthFeature} не будет применять фильтр
+     * авторизации к этому методу.
+     * */
     @NoAuth
     @POST
     @Produces(MediaType.APPLICATION_JSON)

@@ -5,7 +5,8 @@ import javax.ws.rs.container.ResourceInfo;
 import javax.ws.rs.core.FeatureContext;
 
 /**
- * Created by senik11 on 23.03.17.
+ * Dynamic Feature.
+ * Подключает переданный в конструктор фильтр, в зависимости от указанных условий.
  */
 public class AuthFeature implements DynamicFeature {
 
@@ -16,8 +17,13 @@ public class AuthFeature implements DynamicFeature {
     }
 
     @Override
-    public void configure(ResourceInfo resourceInfo, FeatureContext context) {
+    public void configure(
+            ResourceInfo resourceInfo, // информация о смапленном ресурсе (классе и методе)
+            FeatureContext context // функциональный контекст запроса
+    ) {
+        // проверяем, имеет ли выбранный МЕТОД аннотацию @NoAuth
         if (!resourceInfo.getResourceMethod().isAnnotationPresent(NoAuth.class)) {
+            // если нет - применяем фильтр авторизации
             context.register(filter);
         }
     }

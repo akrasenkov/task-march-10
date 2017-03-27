@@ -11,7 +11,7 @@ import javax.ws.rs.core.HttpHeaders;
 import java.io.IOException;
 
 /**
- * Created by senik11 on 23.03.17.
+ * Динамически подключаемый фильтр авторизации.
  */
 public class AuthFilter implements ContainerRequestFilter {
 
@@ -23,9 +23,13 @@ public class AuthFilter implements ContainerRequestFilter {
 
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
+        // Получаем HTTP заголовок запроса Authorizarion
         final String authHeader = requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
+
+        // Проверяем, есть ли пользователь с таким токеном в базе данных
         User user = database.getUserByToken(authHeader);
         if (user == null) {
+            // Нет пользователя - прекраащаем запрос со статусом 403
             throw new ForbiddenException("invalid user");
         }
     }
