@@ -5,6 +5,7 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import edu.androidclub.noteless.auth.AuthDynamicFeature;
 import edu.androidclub.noteless.auth.AuthRequestFilter;
+import edu.androidclub.noteless.auth.DummyAuthenticator;
 import edu.androidclub.noteless.data.local.NotesMongoStorage;
 
 import javax.ws.rs.ApplicationPath;
@@ -23,7 +24,7 @@ public class App extends Application {
         this.singletons = new HashSet<>();
         this.singletons.add(new NotesResource(new NotesMongoStorage(connectDb())));
         this.classes.add(JacksonJaxbJsonProvider.class);
-        this.singletons.add(new AuthDynamicFeature(new AuthRequestFilter()));
+        this.singletons.add(new AuthDynamicFeature(new AuthRequestFilter(new DummyAuthenticator())));
     }
 
     private MongoDatabase connectDb() {

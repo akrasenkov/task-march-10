@@ -1,15 +1,12 @@
 package edu.androidclub.noteless.auth;
 
-import edu.androidclub.noteless.auth.annotation.Auth;
+import edu.androidclub.noteless.auth.annotation.NoAuth;
 
 import javax.ws.rs.container.DynamicFeature;
 import javax.ws.rs.container.ResourceInfo;
 import javax.ws.rs.core.FeatureContext;
 import java.lang.reflect.Method;
 
-/**
- * Created by senik11 on 16.03.17.
- */
 public class AuthDynamicFeature implements DynamicFeature {
 
     private final AuthRequestFilter authFilter;
@@ -21,7 +18,7 @@ public class AuthDynamicFeature implements DynamicFeature {
     @Override
     public void configure(ResourceInfo resourceInfo, FeatureContext context) {
         Method resourceMethod = resourceInfo.getResourceMethod();
-        if (resourceMethod.isAnnotationPresent(Auth.class)) {
+        if (!resourceMethod.isAnnotationPresent(NoAuth.class)) {
             context.register(authFilter);
         }
     }
