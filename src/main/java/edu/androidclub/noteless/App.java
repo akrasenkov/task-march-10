@@ -4,6 +4,7 @@ import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import edu.androidclub.noteless.data.UsersRepository;
+import edu.androidclub.noteless.data.local.NotesMemoryStorage;
 import edu.androidclub.noteless.data.local.UsersMemoryStorage;
 import edu.androidclub.noteless.data.remote.NotesMongoStorage;
 
@@ -18,34 +19,27 @@ public class App extends Application {
     private final Set<Class<?>> classes;
     private final Set<Object> singletons;
 
-    private final MongoDatabase notesDatabase;
-    private final UsersRepository usersDatabase;
-
     public App() {
         this.classes = new HashSet<>();
         this.singletons = new HashSet<>();
         this.classes.add(JacksonJaxbJsonProvider.class);
 
-        this.usersDatabase = new UsersMemoryStorage();
-        MongoClient mongoClient = new MongoClient(DbConfig.DB_HOST, DbConfig.DB_PORT);
-        this.notesDatabase = mongoClient.getDatabase(DbConfig.DB_NAME_NOTES);
+        UsersRepository usersRepository = new UsersMemoryStorage();
 
         this.singletons.add(
                 new NotesResource(
-                        new NotesMongoStorage(
-                                notesDatabase.getCollection(DbConfig.DB_COLLECTION_NOTES)
-                        )
+                        new NotesMemoryStorage()
                 )
         );
         this.singletons.add(
                 new UsersResource(
-                        usersDatabase
+                        usersRepository
                 )
         );
         this.singletons.add(
                 new AuthFeature(
                         new AuthFilter(
-                                usersDatabase
+                                usersRepository
                         )
                 )
         );

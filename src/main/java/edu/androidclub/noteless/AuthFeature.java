@@ -4,10 +4,6 @@ import javax.ws.rs.container.DynamicFeature;
 import javax.ws.rs.container.ResourceInfo;
 import javax.ws.rs.core.FeatureContext;
 
-/**
- * Dynamic Feature.
- * Подключает переданный в конструктор фильтр, в зависимости от указанных условий.
- */
 public class AuthFeature implements DynamicFeature {
 
     private final AuthFilter filter;
@@ -24,6 +20,7 @@ public class AuthFeature implements DynamicFeature {
         // проверяем, имеет ли выбранный МЕТОД аннотацию @NoAuth
         if (!resourceInfo.getResourceMethod().isAnnotationPresent(NoAuth.class)) {
             // если нет - применяем фильтр авторизации
+            System.out.println("REGISTER: " + resourceInfo.getResourceMethod().getName());
             context.register(filter);
         }
     }

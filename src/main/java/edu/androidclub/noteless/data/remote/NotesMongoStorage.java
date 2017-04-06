@@ -11,9 +11,6 @@ import java.util.UUID;
 
 import static com.mongodb.client.model.Filters.eq;
 
-/**
- * Created by senik11 on 16.03.17.
- */
 public class NotesMongoStorage implements NotesRepository {
 
     private final MongoCollection<Document> notesCollection;

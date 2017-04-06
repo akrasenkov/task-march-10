@@ -2,11 +2,14 @@ package edu.androidclub.noteless.domain;
 
 public class Note {
 
-    private final String id;
+    private String id;
 
     private String text;
 
     private long timestamp;
+
+    public Note() {
+    }
 
     public Note(String id, String text, long timestamp) {
         this.id = id;
@@ -42,7 +45,7 @@ public class Note {
         Note note = (Note) o;
 
         if (timestamp != note.timestamp) return false;
-        if (!id.equals(note.id)) return false;
+        if (id != null ? !id.equals(note.id) : note.id != null) return false;
         return text != null ? text.equals(note.text) : note.text == null;
     }
 
