@@ -2,21 +2,26 @@ package edu.androidclub.noteless.data.remote;
 
 import com.mongodb.Function;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import edu.androidclub.noteless.data.UsersRepository;
 import edu.androidclub.noteless.data.adapter.DocumentAdapter;
 import edu.androidclub.noteless.domain.User;
 import org.bson.Document;
 
+import javax.inject.Inject;
+import javax.jws.soap.SOAPBinding;
 import java.util.UUID;
 
 import static com.mongodb.client.model.Filters.eq;
 
 public class UsersMongoStorage implements UsersRepository {
 
+    private static final String USERS_COLLECTION = "users";
     private MongoCollection<Document> usersCollection;
 
-    public UsersMongoStorage(MongoCollection<Document> usersCollection) {
-        this.usersCollection = usersCollection;
+    @Inject
+    public UsersMongoStorage(MongoDatabase mongoDatabase) {
+        this.usersCollection = mongoDatabase.getCollection(USERS_COLLECTION);
     }
 
     @Override

@@ -3,6 +3,7 @@ package edu.androidclub.noteless;
 import edu.androidclub.noteless.data.UsersRepository;
 import edu.androidclub.noteless.domain.User;
 
+import javax.inject.Inject;
 import javax.sql.rowset.FilteredRowSet;
 import javax.ws.rs.ForbiddenException;
 import javax.ws.rs.container.ContainerRequestContext;
@@ -14,6 +15,7 @@ public class AuthFilter implements ContainerRequestFilter {
 
     private final UsersRepository database;
 
+    @Inject
     public AuthFilter(UsersRepository database) {
         this.database = database;
     }

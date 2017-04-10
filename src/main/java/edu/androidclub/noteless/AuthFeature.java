@@ -1,5 +1,6 @@
 package edu.androidclub.noteless;
 
+import javax.inject.Inject;
 import javax.ws.rs.container.DynamicFeature;
 import javax.ws.rs.container.ResourceInfo;
 import javax.ws.rs.core.FeatureContext;
@@ -8,6 +9,7 @@ public class AuthFeature implements DynamicFeature {
 
     private final AuthFilter filter;
 
+    @Inject
     public AuthFeature(AuthFilter filter) {
         this.filter = filter;
     }

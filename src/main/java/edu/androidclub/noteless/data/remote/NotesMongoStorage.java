@@ -2,21 +2,25 @@ package edu.androidclub.noteless.data.remote;
 
 import com.mongodb.Function;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import edu.androidclub.noteless.data.NotesRepository;
 import edu.androidclub.noteless.domain.Note;
 import org.bson.Document;
 
+import javax.inject.Inject;
 import java.util.UUID;
 
 import static com.mongodb.client.model.Filters.eq;
 
 public class NotesMongoStorage implements NotesRepository {
 
+    private static final String NOTES_COLLECTION = "notes";
     private final MongoCollection<Document> notesCollection;
 
-    public NotesMongoStorage(MongoCollection<Document> notesCollection) {
-        this.notesCollection = notesCollection;
+    @Inject
+    public NotesMongoStorage(MongoDatabase mongoDatabase) {
+        this.notesCollection = mongoDatabase.getCollection(NOTES_COLLECTION);
     }
 
     @Override

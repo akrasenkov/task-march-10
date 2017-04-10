@@ -3,17 +3,15 @@ package edu.androidclub.noteless;
 import edu.androidclub.noteless.data.UsersRepository;
 import edu.androidclub.noteless.domain.User;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path("/users")
 public class UsersResource {
 
-    private final UsersRepository database;
-
-    public UsersResource(UsersRepository database) {
-        this.database = database;
-    }
+    @Inject
+    private UsersRepository database;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)

@@ -3,22 +3,19 @@ package edu.androidclub.noteless;
 import edu.androidclub.noteless.data.NotesRepository;
 import edu.androidclub.noteless.domain.Note;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 import java.net.URI;
-import java.util.Iterator;
-import java.util.List;
+
 
 @Path("/notes")
 public class NotesResource {
 
-    private final NotesRepository notesRepository;
-
-    public NotesResource(NotesRepository notesRepository) {
-        this.notesRepository = notesRepository;
-    }
+    @Inject
+    private NotesRepository notesRepository;
 
     @POST
     @Consumes(MediaType.TEXT_PLAIN)
