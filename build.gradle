@@ -39,7 +39,7 @@ appengine {
     }
     app {
         id = 'banking-edu-androidclub'
-        version = 'v3'
+        version = 'v1'
     }
     enhancer {
         version = 'v2'
@@ -50,14 +50,16 @@ appengine {
 dependencies {
     compile 'javax.servlet:javax.servlet-api:3.1.0'
 
+    compile 'com.google.appengine:appengine-api-1.0-sdk:1.9.38'
+    compile 'com.googlecode.objectify:objectify:5.1.13'
+    compile 'org.slf4j:slf4j-jdk14:1.7.21'
+
     compile 'org.glassfish.jersey.core:jersey-server:2.23.2'
     compile 'org.glassfish.jersey.containers:jersey-container-servlet-core:2.23.2'
     compile 'com.fasterxml.jackson.core:jackson-core:2.7.0'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.7.0'
     compile 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.5.4'
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.7.0'
-
-    compile 'org.mongodb:mongo-java-driver:3.4.2'
 
     testCompile 'junit:junit:4.12'
 

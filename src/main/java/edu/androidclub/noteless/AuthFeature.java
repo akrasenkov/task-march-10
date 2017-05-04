@@ -7,10 +7,10 @@ import javax.ws.rs.core.FeatureContext;
 
 public class AuthFeature implements DynamicFeature {
 
-    private final AuthFilter filter;
+    private final Doorman filter;
 
     @Inject
-    public AuthFeature(AuthFilter filter) {
+    public AuthFeature(Doorman filter) {
         this.filter = filter;
     }
 

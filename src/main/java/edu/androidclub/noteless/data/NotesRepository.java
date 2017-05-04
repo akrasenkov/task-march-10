@@ -1,12 +1,13 @@
 package edu.androidclub.noteless.data;
 
+import com.googlecode.objectify.Key;
 import edu.androidclub.noteless.domain.Note;
 
 public interface NotesRepository {
 
-    Iterable<Note> getNotes();
+    Iterable<Note> getNotes(Key<?> userKey);
 
-    String createNote(String text, long timestamp);
+    String createNote(Key<?> userKey, String text, long timestamp);
 
     Note getNote(String id) throws NoteNotFoundException;
 

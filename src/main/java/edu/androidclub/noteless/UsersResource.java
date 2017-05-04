@@ -1,11 +1,14 @@
 package edu.androidclub.noteless;
 
+import com.googlecode.objectify.Key;
 import edu.androidclub.noteless.data.UsersRepository;
 import edu.androidclub.noteless.domain.User;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriBuilder;
 
 @Path("/users")
 public class UsersResource {
@@ -30,10 +33,14 @@ public class UsersResource {
     @NoAuth
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public User createUser(
+    public Response createUser(
             @QueryParam("token") String token
     ) {
-        return database.createUser(token, System.currentTimeMillis());
+        User user = database.createUser(token, System.currentTimeMillis());
+        Key<?> userKey = Key.create(User.class, user.getId());
+        return Response.created(
+                UriBuilder.fromResource(UsersResource.class).path(userKey.toWebSafeString()).build()
+        ).entity(user).build();
     }
 
 }

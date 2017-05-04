@@ -1,12 +1,17 @@
 package edu.androidclub.noteless.domain;
 
-/**
- * Created by senik11 on 23.03.17.
- */
+import com.googlecode.objectify.Key;
+import com.googlecode.objectify.annotation.Entity;
+import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
+
+@Entity(name = "Users")
 public class User {
 
-    private String id;
+    @Id
+    private Long id;
 
+    @Index
     private String token;
 
     private long timestamp;
@@ -14,14 +19,32 @@ public class User {
     public User() {
     }
 
-    public User(String id, String token, long timestamp) {
-        this.id = id;
+    public User(String token, long timestamp) {
         this.token = token;
         this.timestamp = timestamp;
     }
 
-    public String getId() {
+    public Key<?> getKey() {
+        if (id == null) {
+            return null;
+        }
+        return Key.create(User.class, id);
+    }
+
+    public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public void setTimestamp(long timestamp) {
+        this.timestamp = timestamp;
     }
 
     public String getToken() {
@@ -34,6 +57,7 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
+
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
@@ -52,12 +76,5 @@ public class User {
         return result;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", token='" + token + '\'' +
-                ", timestamp=" + timestamp +
-                '}';
-    }
+
 }

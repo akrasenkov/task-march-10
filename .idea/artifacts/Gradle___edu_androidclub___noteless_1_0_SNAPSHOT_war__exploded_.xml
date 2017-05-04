@@ -17,13 +17,16 @@
           <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: com.googlecode.objectify:objectify:5.1.13" />
+          <element id="library" level="project" name="Gradle: org.slf4j:slf4j-jdk14:1.7.21" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-server:2.23.2" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.containers:jersey-container-servlet-core:2.23.2" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.7.0" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.7.0" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.5.4" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.7.0" />
-          <element id="library" level="project" name="Gradle: org.mongodb:mongo-java-driver:3.4.2" />
+          <element id="library" level="project" name="Gradle: com.google.guava:guava:18.0" />
+          <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.21" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-common:2.23.2" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-client:2.23.2" />
           <element id="library" level="project" name="Gradle: javax.ws.rs:javax.ws.rs-api:2.0.1" />
@@ -41,6 +44,7 @@
           <element id="library" level="project" name="Gradle: org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b05" />
           <element id="library" level="project" name="Gradle: org.javassist:javassist:3.20.0-GA" />
           <element id="library" level="project" name="Gradle: javax.inject:javax.inject:1" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.appengine/appengine-api-1.0-sdk/1.9.38/c4e743d675b9a1883023835b7d4fe1d2a72fb7d6/appengine-api-1.0-sdk-1.9.38.jar" />
         </element>
       </element>
     </root>
